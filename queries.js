@@ -1,12 +1,5 @@
-// queries.js
-// All Cypher lives here, kept separate from route handling so it's easy to review
-// and reuse. Every query is parameterised - no string concatenation anywhere.
-
 const { runQuery } = require("./db");
 
-// --- Simple lookups -------------------------------------------------------
-
-// Search movies by (partial, case-insensitive) title.
 async function searchMovies(term) {
   const records = await runQuery(
     `MATCH (m:Movie)
