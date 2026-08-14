@@ -29,6 +29,15 @@ Person ── DIRECTED ──> Movie
 ## Live Link
 
 https://movie-graph-explorer.onrender.com/
+
+## AI Assistance
+
+AI tools were used as a development aid for selected parts of the project, including:
+
+- Frontend development and UI improvements
+- Assistance with writing and refining some Cypher queries
+- Assistance with creating and structuring the database seed file
+  
 ## Key Features
 
 - Graph-based data modeling
