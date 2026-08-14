@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Graph Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🎬 Movie Graph Explorer</h1>
+    <p class="tagline">Explore how actors, directors, and movies connect.</p>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="movie">Movie Explorer</button>
+    <button class="tab-btn" data-tab="network">Co-star Network</button>
+    <button class="tab-btn" data-tab="path">Connection Path</button>
+  </nav>
+
+  <main>
+    <!--movie explorer-->
+    <section id="tab-movie" class="tab-panel active">
+      <div class="search-row">
+        <input id="movie-search" type="text" placeholder="Search a movie (e.g. Inception)" autocomplete="off" />
+      </div>
+      <ul id="movie-results" class="result-list"></ul>
+      <div id="movie-detail" class="detail-card"></div>
+      <div id="movie-recs"></div>
+    </section>
+
+    <!--co-start network-->
+    <section id="tab-network" class="tab-panel">
+      <div class="search-row">
+        <input id="person-search" type="text" placeholder="Search an actor (e.g. Leonardo DiCaprio)" autocomplete="off" />
+      </div>
+      <ul id="person-results" class="result-list"></ul>
+      <div id="network-result"></div>
+    </section>
+
+    <!--connection path -->
+    <section id="tab-path" class="tab-panel">
+      <p class="hint">Find the shortest chain of collaborations connecting two people — even if they've never worked together directly.</p>
+      <div class="path-inputs">
+        <div class="path-field">
+          <input id="path-from-search" type="text" placeholder="From: actor or director" autocomplete="off" />
+          <ul id="path-from-results" class="result-list"></ul>
+          <div id="path-from-selected" class="selected-chip"></div>
+        </div>
+        <div class="path-field">
+          <input id="path-to-search" type="text" placeholder="To: actor or director" autocomplete="off" />
+          <ul id="path-to-results" class="result-list"></ul>
+          <div id="path-to-selected" class="selected-chip"></div>
+        </div>
+      </div>
+      <button id="find-path-btn" disabled>Find Connection</button>
+      <div id="path-result"></div>
+    </section>
+  </main>
+
+  
+
+  <script src="app.js"></script>
+</body>
+</html>
