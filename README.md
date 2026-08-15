@@ -24,7 +24,38 @@ The database represents relationships between people and movies.
 
 ```text
 Person ── ACTED_IN ──> Movie
-Person ── DIRECTED ──> Movie
+   │                     │
+   │                     │
+DIRECTED              ACTED_IN
+   │                     │
+   ▼                     ▼
+ Movie <────────────── Person
+   │
+   │ ACTED_IN
+   ▼
+ Person
+```
+Graph Hops
+```
+1 Hop:
+Person → Movie
+
+2 Hops:
+Person → Movie → Person
+
+3 Hops:
+Person → Movie → Person → Movie
+
+Multi-Level:
+Person
+   ↓
+Movie
+   ↓
+Person
+   ↓
+Movie
+   ↓
+Person
 ```
 ## Live Link
 
